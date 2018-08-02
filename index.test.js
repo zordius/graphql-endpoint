@@ -1,4 +1,4 @@
-const { getEndpoints, GraphQLEndpoint } = require('.')
+const { getEndpoints } = require('.')
 const mock = require('mock-fs')
 
 describe('getEndpoints()', () => {
