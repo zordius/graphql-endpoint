@@ -60,7 +60,7 @@ server.applyMiddleware({
 
 Then put your GraphQL query files into `src/endpoints/`. For example, the `src/endpoints/my_api` with content `{ example(id: 123) { title, description } }` will serve GraphQL result on `/my_api` .
 
-The wrapped API endpoint will support two type of http requests:
+The wrapped API endpoint will support two types of http requests:
 
 * simple http GET: the http GET queries will be collected into GraphQL variables then be sent to GraphQL server with server side predefined GraphQL query.
 * http POST: the http POST body be merged with server side predefined query, then be sent to GraphQL server.
