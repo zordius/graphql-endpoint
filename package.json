@@ -1,0 +1,41 @@
+{
+  "name": "graphql-endpoint",
+  "version": "0.0.1",
+  "description": "A lightweight framework for GraphQL endpoints",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zordius/graphql-endpoint.git"
+  },
+  "keywords": [
+    "GraphQL",
+    "API",
+    "endpoint"
+  ],
+  "author": "Zordius Chen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zordius/graphql-endpoint/issues"
+  },
+  "homepage": "https://github.com/zordius/graphql-endpoint#readme",
+  "dependencies": {
+    "debug": "^3.1.0",
+    "express": "^4.16.3",
+    "glob": "^7.1.2",
+    "graphql-tag": "^2.9.2"
+  },
+  "devDependencies": {
+    "graphql": "^0.13.2",
+    "jest": "^23.4.2",
+    "mock-fs": "^4.5.0"
+  },
+  "peerDependencies": {
+    "graphql": "^0.12.0 || ^0.13.0 || ^14.0.0"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}
