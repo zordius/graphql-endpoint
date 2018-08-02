@@ -1,7 +1,7 @@
 # graphql-endpoint
 A lightweight framework for GraphQL endpoints.
 
-**Before**:
+**Before (client)**:
 ```javascript
 fetch('somewhere/graphql', {
   method: 'POST',
@@ -12,13 +12,13 @@ fetch('somewhere/graphql', {
 ).then(response => response.json()) // receive GraphQLResult
 ```
 
-**After**:
-```javascripta
-// put variables into http GET queris
+**After (client)**:
+```javascript
+// put GraphQL variables into http GET queris
 fetch('somewhere/wrapped/endpoint?variable1=abc&variable2=def')
 .then(response => response.json()) // receive GraphQLResult
 
-// or make http POST
+// or make GraphQL like POST without query
 fetch('somehwere/wrapped/endpoint', {
   method: 'POST',
   headers: {
@@ -28,7 +28,15 @@ fetch('somehwere/wrapped/endpoint', {
 ).then(response => response.json()) // receive GraphQLResult
 ```
 
+## Why?
+
+* Reduce your client side request size by moving your GraphQL query from client side to server side.
+* Keep your GraphQL queries at server side safely.
+* Update your GraphQL queries at server side without publishing new client applications.
+
 ## Usage
+
+Add `graphql-endpoint` to your express server.
 
 ```javascript
 const { ApolloServer } = require('apollo-server-express')
