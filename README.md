@@ -36,7 +36,7 @@ fetch('somehwere/wrapped/endpoint', {
 
 ## Usage
 
-Add `graphql-endpoint` to your express server.
+Add `graphql-endpoint` to your GraphQL server.
 
 ```javascript
 const { ApolloServer } = require('apollo-server-express')
