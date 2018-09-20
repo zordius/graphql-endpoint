@@ -15,6 +15,17 @@ const defaultOptions = {
   cwd: path.resolve(process.cwd(), 'src/endpoints')
 }
 
+const safeJSON = str => {
+  if (!str) {
+    return
+  }
+
+  try {
+    return JSON.parse(str)
+  } catch (E) {
+  }
+}
+
 const createRouterByEntries = (app, gqlpath, entries) => {
   const router = new express.Router()
 
@@ -27,7 +38,7 @@ const createRouterByEntries = (app, gqlpath, entries) => {
         req.method = 'POST'
         req.body = {
           query,
-          variables: req.query
+          variables: safeJSON(req.query['_JSON']) || req.query
         }
       }
       req.url = req.originalUrl = gqlpath
