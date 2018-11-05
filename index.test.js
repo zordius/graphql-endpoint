@@ -17,7 +17,7 @@ describe('getEndpoints()', () => {
 
   it('should receive correct graphql entry', () => {
     mock({
-      'src/endpoints/goodend': '{ example(id: 123) { title, description } }'
+      'src/endpoints/goodend.graphql': '{ example(id: 123) { title, description } }'
     })
     expect(getEndpoints()).toEqual({
       errors: 0,
