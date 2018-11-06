@@ -58,7 +58,7 @@ const getEndpoints = (gqlpath = defaultGqlPath, pattern = defaultPattern, option
   debugInfo('Start to load endpoints by pattern "%s", options = %o', pattern, options)
   glob.sync(pattern, options).forEach(file => {
     const query = fs.readFileSync(path.resolve(options.cwd || process.cwd(), file), 'utf8')
-    const name = `/${file}`
+    const name = `/${path.parse(file).name}`
     try {
       gql(query)
       entries[name] = query

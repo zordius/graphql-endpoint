@@ -26,4 +26,28 @@ describe('getEndpoints()', () => {
       }
     })
   })
+  
+  it('should receive correct graphql entry with .graphql', () => {
+    mock({
+      'src/endpoints/goodend.graphql': '{ example(id: 123) { title, description } }'
+    })
+    expect(getEndpoints()).toEqual({
+      errors: 0,
+      entries: {
+        '/goodend': '{ example(id: 123) { title, description } }'
+      }
+    })
+  })
+
+  it('should receive correct graphql entry with .test.graphql', () => {
+    mock({
+      'src/endpoints/goodend.test.graphql': '{ example(id: 123) { title, description } }'
+    })
+    expect(getEndpoints()).toEqual({
+      errors: 0,
+      entries: {
+        '/goodend.test': '{ example(id: 123) { title, description } }'
+      }
+    })
+  })
 })
