@@ -1,5 +1,5 @@
 # graphql-endpoint
-A lightweight framework for GraphQL endpoints.
+[![Build Status](https://travis-ci.org/zordius/graphql-endpoint.svg?branch=master)](https://travis-ci.org/zordius/graphql-endpoint) A lightweight framework for GraphQL endpoints.
 
 **Before (client)**:
 ```javascript
