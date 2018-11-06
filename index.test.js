@@ -26,7 +26,7 @@ describe('getEndpoints()', () => {
       }
     })
   })
-  
+
   it('should receive correct graphql entry with .graphql', () => {
     mock({
       'src/endpoints/goodend.graphql': '{ example(id: 123) { title, description } }'
