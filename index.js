@@ -58,10 +58,11 @@ const getEndpoints = (gqlpath = defaultGqlPath, pattern = defaultPattern, option
   debugInfo('Start to load endpoints by pattern "%s", options = %o', pattern, options)
   glob.sync(pattern, options).forEach(file => {
     const query = fs.readFileSync(path.resolve(options.cwd || process.cwd(), file), 'utf8')
-    const name = `/${path.parse(file).name}`
+    const { dir, name } = path.parse(file)
+    const entryName = `/${path.format({ dir, name })}`
     try {
       gql(query)
-      entries[name] = query
+      entries[entryName] = query
     } catch (E) {
       errors++
       return debugError('The graphql query inside file "%s" is invalid: %s', file, E.message)
